@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-mfg-border;
+  }
+  
+  body {
+    @apply bg-mfg-black text-white font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-mfg-dark-gray;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-mfg-light-gray rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-mfg-text-muted;
+  }
+}
+
+@layer components {
+  /* Glass Effects */
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl;
+  }
+
+  .glass-card {
+    @apply bg-mfg-medium-gray/80 backdrop-blur-xl border border-mfg-border rounded-2xl;
+  }
+
+  .glass-strong {
+    @apply bg-mfg-medium-gray/90 backdrop-blur-xl border border-mfg-border;
+  }
+
+  .glass-panel {
+    @apply bg-mfg-dark-gray/95 backdrop-blur-2xl border border-mfg-border;
+  }
+
+  /* Status Badges */
+  .badge {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide uppercase;
+  }
+
+  .badge-success {
+    @apply bg-mfg-emerald-500/20 text-mfg-emerald-400 ring-1 ring-mfg-emerald-500/30;
+  }
+
+  .badge-warning {
+    @apply bg-mfg-amber-500/20 text-mfg-amber-400 ring-1 ring-mfg-amber-500/30;
+  }
+
+  .badge-danger {
+    @apply bg-mfg-coral-500/20 text-mfg-coral-400 ring-1 ring-mfg-coral-500/30;
+  }
+
+  .badge-info {
+    @apply bg-mfg-cyan-500/20 text-mfg-cyan-400 ring-1 ring-mfg-cyan-500/30;
+  }
+
+  .badge-purple {
+    @apply bg-mfg-purple-500/20 text-mfg-purple-400 ring-1 ring-mfg-purple-500/30;
+  }
+
+  .badge-neutral {
+    @apply bg-mfg-light-gray text-mfg-text-secondary ring-1 ring-mfg-border;
+  }
+
+  /* CAPA Status Badges */
+  .capa-proposed {
+    @apply bg-mfg-cyan-500/15 text-mfg-cyan-400 ring-1 ring-mfg-cyan-500/25;
+  }
+
+  .capa-accepted {
+    @apply bg-mfg-amber-500/15 text-mfg-amber-400 ring-1 ring-mfg-amber-500/25;
+  }
+
+  .capa-in-progress {
+    @apply bg-mfg-purple-500/15 text-mfg-purple-400 ring-1 ring-mfg-purple-500/25;
+  }
+
+  .capa-implemented {
+    @apply bg-mfg-emerald-500/15 text-mfg-emerald-400 ring-1 ring-mfg-emerald-500/25;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-mfg-emerald-400 via-mfg-cyan-400 to-mfg-purple-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-warm {
+    @apply bg-gradient-to-r from-mfg-amber-400 to-mfg-coral-400 bg-clip-text text-transparent;
+  }
+
+  /* Table Styles */
+  .table-header {
+    @apply px-6 py-4 text-left text-xs font-semibold text-mfg-text-muted uppercase tracking-wider;
+  }
+
+  .table-cell {
+    @apply px-6 py-4 text-sm text-white;
+  }
+
+  .table-row {
+    @apply border-b border-mfg-border/50 hover:bg-white/[0.02] transition-all duration-200;
+  }
+
+  .table-row-clickable {
+    @apply table-row cursor-pointer hover:bg-mfg-emerald-500/5;
+  }
+
+  /* Input Styles */
+  .input-primary {
+    @apply w-full bg-mfg-dark-gray border border-mfg-border rounded-xl px-4 py-2.5 text-white placeholder-mfg-text-muted focus:outline-none focus:ring-2 focus:ring-mfg-emerald-500/50 focus:border-mfg-emerald-500 transition-all duration-200;
+  }
+
+  .select-primary {
+    @apply bg-mfg-medium-gray border border-mfg-border rounded-xl px-4 py-2.5 pr-10 text-white font-medium focus:outline-none focus:ring-2 focus:ring-mfg-emerald-500/50 appearance-none cursor-pointer transition-all duration-200;
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-mfg-emerald-600 hover:bg-mfg-emerald-500 text-white font-medium px-4 py-2.5 rounded-xl transition-all duration-200 shadow-glow-emerald/0 hover:shadow-glow-emerald;
+  }
+
+  .btn-secondary {
+    @apply bg-mfg-light-gray hover:bg-mfg-border text-white font-medium px-4 py-2.5 rounded-xl transition-all duration-200;
+  }
+
+  /* Card Hover Effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+
+  /* Trend Indicators */
+  .trend-up {
+    @apply text-mfg-coral-400;
+  }
+
+  .trend-down {
+    @apply text-mfg-emerald-400;
+  }
+
+  .trend-stable {
+    @apply text-mfg-text-muted;
+  }
+}
+
+@layer utilities {
+  /* Glow Effects */
+  .glow-emerald {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.35);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.35);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.35);
+  }
+
+  /* Mesh Background */
+  .bg-mesh {
+    background-image: 
+      radial-gradient(at 40% 20%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(6, 182, 212, 0.06) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(168, 85, 247, 0.05) 0px, transparent 50%),
+      radial-gradient(at 90% 80%, rgba(16, 185, 129, 0.04) 0px, transparent 50%);
+  }
+
+  /* Shimmer Animation */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
